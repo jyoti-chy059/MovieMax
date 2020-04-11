@@ -2,8 +2,8 @@ import React, { useEffect, useCallback, useState } from 'react';
 import '../../index.css';
 import { transformMovieList } from '../../Utils/DataTransform/movieList';
 import HeaderPanel from '../../Components/header';
-import Card from '../../Components/card';
 import API from '../../API';
+import CardList from '../../Components/cardList';
 
 const NowPlayingMovieList = () => {
   const [latestMovieList, setLatestMovieList] = useState(undefined);
@@ -25,7 +25,7 @@ const NowPlayingMovieList = () => {
     <div className="panel">
       <HeaderPanel text={`Now Playing`} />
       <div className="cardContainer">
-        {latestMovieList && <Card list={latestMovieList} />}
+        {latestMovieList && <CardList list={latestMovieList} />}
       </div>
     </div>
   );
