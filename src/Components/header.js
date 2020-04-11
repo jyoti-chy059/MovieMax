@@ -1,8 +1,8 @@
-import React from 'react'
-import '../index.css'
+import React from 'react';
+import '../index.css';
 
 const HeaderPanel = ({ text }) => {
-  return <div className="header">{text}</div>
-}
+  return <div className="header">{text}</div>;
+};
 
-export default HeaderPanel
+export default HeaderPanel;
