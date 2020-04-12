@@ -3,16 +3,13 @@ import PropTypes from 'prop-types';
 import CardImage from './cardImage';
 import CardData from './cardData';
 
-const Card = ({ list }) => {
+const Card = ({ data }) => {
+  console.log(data);
   return (
-    <>
-      {list.map((data) => (
-        <div className="card" key={data.name}>
-          <CardImage imageSrc={data.image} />
-          <CardData name={data.name} date={data.date} />
-        </div>
-      ))}
-    </>
+    <div className="card" key={data.name}>
+      <CardImage imageSrc={data.image} />
+      <CardData name={data.name} date={data.date} />
+    </div>
   );
 };
 

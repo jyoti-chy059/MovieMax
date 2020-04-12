@@ -3,8 +3,8 @@ import '../../index.css';
 
 import { transformMovieList } from '../../Utils/DataTransform/movieList';
 import HeaderPanel from '../../Components/header';
-import Card from '../../Components/card';
 import API from '../../API';
+import CardList from '../../Components/cardList';
 
 const PopularMovieList = () => {
   const [popularMovieList, setPopularMovieList] = useState(undefined);
@@ -26,7 +26,7 @@ const PopularMovieList = () => {
     <div className="panel">
       <HeaderPanel text={`What's Popular`} />
       <div className="cardContainer">
-        {popularMovieList && <Card list={popularMovieList} />}
+        {popularMovieList && <CardList list={popularMovieList} />}
       </div>
     </div>
   );
