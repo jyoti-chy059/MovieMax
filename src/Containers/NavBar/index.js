@@ -3,10 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popover from '@material-ui/core/Popover';
-
+import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   navBarContainer: {
-    height: '12rem',
+    height: '9rem',
   },
   navBar: {
     display: 'flex',
@@ -61,10 +61,18 @@ const NavBar = () => {
             open={Boolean(movieAnchorEl)}
             onClose={movieHandleClose}
           >
-            <MenuItem onClick={movieHandleClose}>Upcoming</MenuItem>
-            <MenuItem onClick={movieHandleClose}>Now Playing</MenuItem>
-            <MenuItem onClick={movieHandleClose}>Popular</MenuItem>
-            <MenuItem onClick={movieHandleClose}>Top Rated</MenuItem>
+            <MenuItem component={Link} to="/upcoming">
+              Upcoming
+            </MenuItem>
+            <MenuItem component={Link} to="/nowPlaying">
+              Now Playing
+            </MenuItem>
+            <MenuItem component={Link} to="/popular">
+              Popular
+            </MenuItem>
+            <MenuItem component={Link} to="/topRated">
+              Top Rated
+            </MenuItem>
           </Popover>
 
           <Button aria-haspopup="true" onClick={seriesHandleClick}>

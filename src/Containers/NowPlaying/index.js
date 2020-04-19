@@ -5,7 +5,7 @@ import HeaderPanel from '../../Components/header';
 import API from '../../API';
 import CardList from '../../Components/cardList';
 
-const NowPlayingMovieList = () => {
+const NowPlayingMovieList = ({ className }) => {
   const [latestMovieList, setLatestMovieList] = useState(undefined);
 
   const fetchInitialData = useCallback(async () => {
@@ -24,7 +24,7 @@ const NowPlayingMovieList = () => {
   return (
     <div className="panel">
       <HeaderPanel text={`Now Playing`} />
-      <div className="cardContainer">
+      <div className={className}>
         {latestMovieList && <CardList list={latestMovieList} />}
       </div>
     </div>
