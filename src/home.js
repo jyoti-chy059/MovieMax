@@ -9,10 +9,10 @@ import Layout from './Containers/Layout';
 const Home = () => {
   return (
     <Layout>
-      <NowPlayingMovieList />
-      <UpcomingMovieList />
-      <PopularMovieList />
-      <TopRatedMovieList />
+      <NowPlayingMovieList className="cardContainer" />
+      <UpcomingMovieList className="cardContainer" />
+      <PopularMovieList className="cardContainer" />
+      <TopRatedMovieList className="cardContainer" />
     </Layout>
   );
 };

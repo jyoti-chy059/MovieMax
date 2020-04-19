@@ -7,6 +7,9 @@ import {
 } from 'react-router-dom';
 import Home from '../home';
 import AllUpcoming from '../Containers/AllUpcoming';
+import AllNowPlaying from '../Containers/AllNowPlaying';
+import AllPopular from '../Containers/AllPopular';
+import AllTopRated from '../Containers/AllTopRated';
 
 const App = () => {
   return (
@@ -15,6 +18,9 @@ const App = () => {
         <Switch>
           <Route path="/home" component={Home} />
           <Route path="/upcoming" component={AllUpcoming} />
+          <Route path="/nowPlaying" component={AllNowPlaying} />
+          <Route path="/popular" component={AllPopular} />
+          <Route path="/topRated" component={AllTopRated} />
           <Redirect from="/" to="/home" />
           <Redirect from="**" to="/home" />
         </Switch>

@@ -21,6 +21,13 @@ code {
   flex: 1 1 90%;
 }
 
+.categoryPage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+
 .card {
   display: flex;
   flex-direction: column;
