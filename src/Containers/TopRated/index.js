@@ -11,7 +11,7 @@ const TopRatedMovieList = ({ className }) => {
 
   const fetchInitialData = useCallback(async () => {
     try {
-      const { data } = await API.fetchTopRatedMovieList();
+      const { data } = await API.fetchTopRatedMovieList(1);
       setTopRatedMovieList(transformMovieList(data.results));
     } catch (err) {
       console.log(err);

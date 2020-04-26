@@ -10,7 +10,7 @@ const NowPlayingMovieList = ({ className }) => {
 
   const fetchInitialData = useCallback(async () => {
     try {
-      const { data } = await API.fetchPlayingMovieList();
+      const { data } = await API.fetchPlayingMovieList(1);
       setLatestMovieList(transformMovieList(data.results));
     } catch (err) {
       console.log(err);

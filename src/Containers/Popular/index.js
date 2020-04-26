@@ -11,7 +11,7 @@ const PopularMovieList = ({ className }) => {
 
   const fetchInitialData = useCallback(async () => {
     try {
-      const { data } = await API.fetchPopulatMovieList();
+      const { data } = await API.fetchPopulatMovieList(1);
       setPopularMovieList(transformMovieList(data.results));
     } catch (err) {
       console.log(err);

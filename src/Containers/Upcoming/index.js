@@ -10,7 +10,7 @@ const UpcomingMovieList = ({ className }) => {
 
   const fetchInitialData = useCallback(async () => {
     try {
-      const { data } = await API.fetchUpcomingMovieList();
+      const { data } = await API.fetchUpcomingMovieList(1);
       setUpcomingMovieList(transformMovieList(data.results));
     } catch (err) {
       console.log(err);
