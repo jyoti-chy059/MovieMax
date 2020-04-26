@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { API_KEY, language, serviceURL } from '../Utils/constant';
+
 const API = {
   fetchPlayingMovieList: (pageNo) =>
     axios.get(
