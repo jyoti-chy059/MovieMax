@@ -1,35 +1,8 @@
-import React, { useEffect, useCallback, useState } from 'react';
-import '../../index.css';
+import React from 'react';
+import BasePopularMovieList from 'Containers/Base/Popular';
 
-import { transformMovieList } from '../../Utils/DataTransform/movieList';
-import HeaderPanel from '../../Components/header';
-import API from '../../API';
-import CardList from '../../Components/cardList';
-
-const PopularMovieList = ({ className }) => {
-  const [popularMovieList, setPopularMovieList] = useState(undefined);
-
-  const fetchInitialData = useCallback(async () => {
-    try {
-      const { data } = await API.fetchPopulatMovieList(1);
-      setPopularMovieList(transformMovieList(data.results));
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchInitialData();
-  }, [fetchInitialData]);
-
-  return (
-    <div className="panel">
-      <HeaderPanel text={`What's Popular`} />
-      <div className={className}>
-        {popularMovieList && <CardList list={popularMovieList} />}
-      </div>
-    </div>
-  );
+const PopularMovieList = () => {
+  return <BasePopularMovieList pageNo="1" />;
 };
 
 export default PopularMovieList;

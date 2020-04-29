@@ -4,7 +4,6 @@ import CardImage from './cardImage';
 import CardData from './cardData';
 
 const Card = ({ data }) => {
-  console.log(data);
   return (
     <div className="card" key={data.name}>
       <CardImage imageSrc={data.image} />
