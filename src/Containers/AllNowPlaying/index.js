@@ -12,10 +12,11 @@ const AllNowPlaying = () => {
   };
   return (
     <Layout>
-      <div className="container">
+      <div className="topContainer">
         <BaseNowPlayingMovieList
           className="categoryPage"
           pageNo={currentPage}
+          panelClassName="panel"
         />
         <AppPagination
           currentPage={currentPage}

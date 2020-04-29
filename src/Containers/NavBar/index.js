@@ -6,7 +6,7 @@ import Popover from '@material-ui/core/Popover';
 import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   navBarContainer: {
-    height: '9rem',
+    height: '5rem',
   },
   navBar: {
     display: 'flex',

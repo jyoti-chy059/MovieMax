@@ -12,8 +12,12 @@ const AllTopRated = () => {
   };
   return (
     <Layout>
-      <div className="container">
-        <BaseTopRatedMovieList className="categoryPage" pageNo={currentPage} />
+      <div className="topContainer">
+        <BaseTopRatedMovieList
+          className="categoryPage"
+          pageNo={currentPage}
+          panelClassName="panel"
+        />
         <AppPagination
           currentPage={currentPage}
           noOfPages={10}
