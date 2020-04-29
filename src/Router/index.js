@@ -5,11 +5,11 @@ import {
   Redirect,
   Route,
 } from 'react-router-dom';
-import Home from '../home';
-import AllUpcoming from '../Containers/AllUpcoming';
-import AllNowPlaying from '../Containers/AllNowPlaying';
-import AllPopular from '../Containers/AllPopular';
-import AllTopRated from '../Containers/AllTopRated';
+import Home from 'Containers/Home/home';
+import AllUpcoming from 'Containers/AllUpcoming';
+import AllNowPlaying from 'Containers/AllNowPlaying';
+import AllPopular from 'Containers/AllPopular';
+import AllTopRated from 'Containers/AllTopRated';
 
 const App = () => {
   return (

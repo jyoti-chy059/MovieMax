@@ -12,8 +12,12 @@ const AllUpcoming = () => {
   };
   return (
     <Layout>
-      <div className="conatiner">
-        <BaseUpcomingMovieList className="categoryPage" pageNo={currentPage} />
+      <div className="topContainer">
+        <BaseUpcomingMovieList
+          className="categoryPage"
+          pageNo={currentPage}
+          panelClassName="panel"
+        />
         <AppPagination
           currentPage={currentPage}
           noOfPages={10}
