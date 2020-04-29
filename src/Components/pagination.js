@@ -4,8 +4,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > *': {
+    '&': {
       marginTop: theme.spacing(2),
+      flex: '1 1 90%',
+      paddingTop: '2rem',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
   },
   ul: {
@@ -14,11 +19,20 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const AppPagination = () => {
+const AppPagination = ({ currentPage, noOfPages, onChange }) => {
+  const handlePageChange = (event, value) => {
+    onChange(value);
+  };
   const classes = useStyles();
+
   return (
     <div className={classes.root}>
-      <Pagination count={10} shape="rounded" />
+      <Pagination
+        page={currentPage}
+        count={noOfPages}
+        shape="rounded"
+        onChange={handlePageChange}
+      />
     </div>
   );
 };

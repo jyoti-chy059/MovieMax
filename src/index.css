@@ -71,9 +71,15 @@ p {
   /* height: 22rem; */
   height: 100%;
   padding: 1.5rem 1.5rem 0rem 1.5rem;
-
+  flex: 1 1 90%;
 }
 
 .imageContainer {
   flex: 1 1 72%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 90%;
 }

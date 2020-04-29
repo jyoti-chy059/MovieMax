@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../../index.css';
-
-import Layout from '../Layout';
-import NowPlayingMovieList from '../NowPlaying';
-import AppPagination from '../../Components/pagination';
+import Layout from 'Containers/Layout';
+import AppPagination from 'Components/pagination';
+import BaseNowPlayingMovieList from 'Containers/Base/NowPlaying';
 
 const AllNowPlaying = () => {
-  const handlePageChange = () => {
-    console.log('handle page change');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const handlePageChange = (value) => {
+    setCurrentPage(value);
   };
   return (
     <Layout>
-      <div>
-        <NowPlayingMovieList className="categoryPage" />
+      <div className="container">
+        <BaseNowPlayingMovieList
+          className="categoryPage"
+          pageNo={currentPage}
+        />
         <AppPagination
-          activePage={1}
-          countPerPage={10}
-          totalItemsCount={100}
-          pageRangeDisplayed={5}
+          currentPage={currentPage}
+          noOfPages={10}
           onChange={handlePageChange}
         />
       </div>
