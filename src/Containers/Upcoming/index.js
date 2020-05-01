@@ -1,33 +1,14 @@
-import React, { useEffect, useCallback, useState } from 'react';
-import '../../index.css';
-import { transformMovieList } from '../../Utils/DataTransform/movieList';
-import HeaderPanel from '../../Components/header';
-import API from '../../API';
-import CardList from '../../Components/cardList';
+import React from 'react';
+import BaseUpcomingMovieList from 'Containers/Base/Upcoming';
 
-const UpcomingMovieList = () => {
-  const [upcomingMovieList, setUpcomingMovieList] = useState(undefined);
-
-  const fetchInitialData = useCallback(async () => {
-    try {
-      const { data } = await API.fetchUpcomingMovieList();
-      setUpcomingMovieList(transformMovieList(data.results));
-    } catch (err) {
-      console.log(err);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchInitialData();
-  }, [fetchInitialData]);
-
+const UpcomingMovieList = ({ className, panelClassName }) => {
   return (
-    <div className="panel">
-      <HeaderPanel text={`Upcoming`} />
-      <div className="cardContainer">
-        {upcomingMovieList && <CardList list={upcomingMovieList} />}
-      </div>
-    </div>
+    <BaseUpcomingMovieList
+      pageNo="1"
+      className={className}
+      panelClassName={panelClassName}
+      cardSize="s"
+    />
   );
 };
 
