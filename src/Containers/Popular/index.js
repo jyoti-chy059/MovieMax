@@ -7,6 +7,7 @@ const PopularMovieList = ({ className, panelClassName }) => {
       pageNo="1"
       className={className}
       panelClassName={panelClassName}
+      cardSize="s"
     />
   );
 };

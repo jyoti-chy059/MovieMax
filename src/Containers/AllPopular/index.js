@@ -19,6 +19,7 @@ const AllPopular = () => {
           className="categoryPage"
           pageNo={currentPage}
           panelClassName="panel"
+          cardSize="m"
         />
         <AppPagination
           currentPage={currentPage}

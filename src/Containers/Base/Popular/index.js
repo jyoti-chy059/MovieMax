@@ -6,7 +6,12 @@ import HeaderPanel from 'Components/header';
 import API from 'API';
 import CardList from 'Components/cardList';
 
-const BasePopularMovieList = ({ className, pageNo, panelClassName }) => {
+const BasePopularMovieList = ({
+  className,
+  pageNo,
+  panelClassName,
+  cardSize,
+}) => {
   const [popularMovieList, setPopularMovieList] = useState(undefined);
 
   const fetchInitialData = useCallback(async () => {
@@ -26,7 +31,9 @@ const BasePopularMovieList = ({ className, pageNo, panelClassName }) => {
     <div className={panelClassName}>
       <HeaderPanel text={`What's Popular`} />
       <div className={className}>
-        {popularMovieList && <CardList list={popularMovieList} />}
+        {popularMovieList && (
+          <CardList list={popularMovieList} cardSize={cardSize} />
+        )}
       </div>
     </div>
   );

@@ -6,7 +6,12 @@ import HeaderPanel from 'Components/header';
 import API from 'API';
 import CardList from 'Components/cardList';
 
-const BaseTopRatedMovieList = ({ className, pageNo, panelClassName }) => {
+const BaseTopRatedMovieList = ({
+  className,
+  pageNo,
+  panelClassName,
+  cardSize,
+}) => {
   const [topRatedMovieList, setTopRatedMovieList] = useState(undefined);
 
   const fetchInitialData = useCallback(async () => {
@@ -26,7 +31,9 @@ const BaseTopRatedMovieList = ({ className, pageNo, panelClassName }) => {
     <div className={panelClassName}>
       <HeaderPanel text={`Top Rated`} />
       <div className={className}>
-        {topRatedMovieList && <CardList list={topRatedMovieList} />}
+        {topRatedMovieList && (
+          <CardList list={topRatedMovieList} cardSize={cardSize} />
+        )}
       </div>
     </div>
   );

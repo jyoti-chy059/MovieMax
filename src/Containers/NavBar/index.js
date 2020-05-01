@@ -7,10 +7,12 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   navBarContainer: {
     height: '5rem',
+    // flex: '1 1 10%',
   },
   navBar: {
     display: 'flex',
     height: '5rem',
+    flex: '1 1 10%',
     backgroundColor: '#1976d2',
   },
   navLeftOptions: {
